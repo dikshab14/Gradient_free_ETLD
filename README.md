@@ -40,6 +40,7 @@ where
 
 The method evolves an ensemble $\{\theta^m\}_{m=1}^M$ using an **affine-invariant** preconditioner $C$ (empirical covariance) and **statistical linearization**.  
 The key surrogate for the Jacobian in the gradient of the MMD is
+
 $$
 C^{\theta x^j}_s
 \approx
@@ -47,23 +48,26 @@ C_s \,\nabla_{\theta^m} G_{\theta_s^m}(u^j).
 $$
 
 This leads to the interacting particle system
+
 $$
 \mathrm{d}\theta_s^{m}
-= - \Bigl(C_s \nabla_{\theta^m} \log \pi_{\text{prior}}(\theta^m)
-      - \beta\, g^{mj}_s \Bigr)\,\mathrm{d}s  + \frac{D+1}{M}\bigl(\theta_s^m-\bar{\theta}_s\bigr)\,\mathrm{d}s
-       + \sqrt{2}\,C_s^{1/2}\,\mathrm{d}W_s^{m},
+= -\Bigl(C_s \nabla_{\theta^m} \log \pi_{\text{prior}}(\theta^m)
+      - \beta\, g^{mj}_s \Bigr)\,\mathrm{d}s
+  + \frac{D+1}{M}\bigl(\theta_s^m-\bar{\theta}_s\bigr)\,\mathrm{d}s
+  + \sqrt{2}\,C_s^{1/2}\,\mathrm{d}W_s^{m},
 $$
+
 for $m = 1,\dots,M$, where $W_s^{m}$ is a $D$-dimensional standard Brownian motion and
+
 $$
-g^{mj}_s :=
+g^{mj}_s =
 \frac{2}{J(J-1)}
 \sum_{\substack{l,j = 1 \\ l \neq j}}^J
 C^{\theta x^j}_s
 \nabla_{x^{mj}} k(x^{mj}_s, x^{ml}_s)
 -
 \frac{2}{JN}
-\sum_{j=1}^J
-\sum_{n=1}^N
+\sum_{j=1}^J \sum_{n=1}^N
 C^{\theta x^j}_s
 \nabla_{x^{mj}} k(x^{mj}_s, y^n).
 $$
