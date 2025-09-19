@@ -24,38 +24,37 @@ This repository implements and evaluates GF-ETLD for likelihood-free inference w
 ## Generalized Bayesian posterior
 
 We target the generalized posterior
-\[
+$$
 \pi(\theta \mid Y)
 \propto
 \pi_{0}(\theta)\,
 \exp\bigl\{-\beta\,\mathrm{MMD}^2(P_\theta, P_{\text{data}})\bigr\},
-\]
+$$
 where
 
-* \(\pi_{0}(\theta)\) is the prior density  
-* \(\beta\) is the temperature parameter  
-* \(\mathrm{MMD}^2(P_\theta,P_{\text{data}})\) measures the discrepancy between model and data distributions  
+* $\pi_{0}(\theta)$ is the prior density  
+* $\beta$ is the temperature parameter  
+* $\mathrm{MMD}^2(P_\theta,P_{\text{data}})$ measures the discrepancy between model and data distributions  
 
 ## GF-ETLD Algorithm
-$$
-The method evolves an ensemble \(\{\theta^m\}_{m=1}^M\) using an **affine-invariant** preconditioner \(C\) (empirical covariance) and **statistical linearization**.  
+
+The method evolves an ensemble $\{\theta^m\}_{m=1}^M$ using an **affine-invariant** preconditioner $C$ (empirical covariance) and **statistical linearization**.  
 The key surrogate for the Jacobian in the gradient of the MMD is
-\begin{equation}\label{eqn:jacobian_surrogate}
+$$
 C^{\theta x^j}_s
 \approx
 C_s \,\nabla_{\theta^m} G_{\theta_s^m}(u^j).
-\end{equation}
+$$
 
 This leads to the interacting particle system
-\begin{align}\label{eqn:grad_free_ips}
+$$
 \mathrm{d}\theta_s^{m}
-=& - \Bigl(C_s \nabla_{\theta^m} \log \pi_{\text{prior}}(\theta^m)
-      - \beta\, g^{mj}_s \Bigr)\,\mathrm{d}s  \notag \\
-&\quad + \frac{D+1}{M}\bigl(\theta_s^m-\bar{\theta}_s\bigr)\,\mathrm{d}s
+= - \Bigl(C_s \nabla_{\theta^m} \log \pi_{\text{prior}}(\theta^m)
+      - \beta\, g^{mj}_s \Bigr)\,\mathrm{d}s  + \frac{D+1}{M}\bigl(\theta_s^m-\bar{\theta}_s\bigr)\,\mathrm{d}s
        + \sqrt{2}\,C_s^{1/2}\,\mathrm{d}W_s^{m},
-\end{align}
-for \(m = 1,\dots,M\), where \(W_s^{m}\) is a \(D\)-dimensional standard Brownian motion and
-\begin{equation}\label{eqn:g_cross_cov}
+$$
+for $m = 1,\dots,M$, where $W_s^{m}$ is a $D$-dimensional standard Brownian motion and
+$$
 g^{mj}_s :=
 \frac{2}{J(J-1)}
 \sum_{\substack{l,j = 1 \\ l \neq j}}^J
@@ -67,8 +66,8 @@ C^{\theta x^j}_s
 \sum_{n=1}^N
 C^{\theta x^j}_s
 \nabla_{x^{mj}} k(x^{mj}_s, y^n).
-\end{equation}
 $$
+
 ## Project structure
 
 ### Core implementation (`gfetld_mmd/`)
