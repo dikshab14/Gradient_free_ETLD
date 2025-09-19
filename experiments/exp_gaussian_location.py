@@ -6,7 +6,7 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gfetld_mmd import GFETLD, GFETLDConfig, GaussianPrior, gaussian_location_generator
-from gfetld_mmd.plots import plot_contamination_curve, plot_contamination_rmse, plot_histograms_per_dim
+from src.plots import plot_contamination_curve, plot_contamination_rmse, plot_histograms_per_dim
 
 OUTDIR = Path("./outputs/gaussian_location")
 

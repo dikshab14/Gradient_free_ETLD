@@ -6,7 +6,7 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from gfetld_mmd import GFETLD, GFETLDConfig, GaussianPrior, lorenz96_generator
-from gfetld_mmd.plots import plot_theta_mean_trajectories, plot_mmd2_curve, plot_histograms_per_dim
+from src.plots import plot_theta_mean_trajectories, plot_mmd2_curve, plot_histograms_per_dim
 
 OUTDIR = Path("./outputs/lorenz96")
 TRUE_THETA = np.array([2.0, 0.8, 0.9, 1.7])
