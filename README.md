@@ -1,5 +1,5 @@
 
-# Gradient-Free Ensemble Transform Langevin Dynamics with MMD
+# Gradient-free generalized Bayesian inference for generative models using maximum mean discrepancy
 
 This repository contains implementations of **gradient-free ensemble transform Langevin dynamics (GF-ETLD)** for likelihood-free Bayesian inference using **maximum mean discrepancy (MMD)** as the data-fitting term.
 
