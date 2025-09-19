@@ -51,20 +51,12 @@ $$
 
 This leads to the interacting particle system
 
-$$ d\theta_s^{m}
-= -(C_s \nabla_{\theta^m} \log \pi_{\text{prior}}(\theta^m) - \beta g_s^{mj}) ds
-+ \frac{D+1}{M}(\theta_s^m-\bar{\theta}_s) ds
-+ \sqrt{2}\, C_s^{1/2} dW_s^{m}, $$
+$$ d\theta_s^{m}= -(C_s \nabla_{\theta^m} \log \pi_{\text{prior}}(\theta^m) - \beta g_s^{mj}) ds+ \frac{D+1}{M}(\theta_s^m-\bar{\theta}_s) ds+ \sqrt{2}\, C_s^{1/2} dW_s^{m}, $$
 
 for $m=1,\dots,M$, where $W_s^{m}$ is a $D$-dimensional standard Brownian motion and
 
-$$ g_s^{mj}
-= \frac{2}{J(J-1)}
-  \sum_{l=1,\,l\neq j}^{J} C_s^{\theta x^j}
-     \nabla_{x^{mj}} k(x^{mj}_s, x^{ml}_s)
-  - \frac{2}{JN}
-  \sum_{j=1}^{J}\sum_{n=1}^{N} C_s^{\theta x^j}
-     \nabla_{x^{mj}} k(x^{mj}_s, y^{n}). $$
+$$ g_s^{mj} = \frac{2}{J(J-1)}\sum_{l=1,\,l\neq j}^{J} C_s^{\theta x^j}
+\nabla_{x^{mj}} k(x^{mj}_s, x^{ml}_s)- \frac{2}{JN}\sum_{j=1}^{J}\sum_{n=1}^{N} C_s^{\theta x^j}\nabla_{x^{mj}} k(x^{mj}_s, y^{n}). $$
 
 ## Project structure
 
