@@ -37,7 +37,7 @@ where
 * \(\mathrm{MMD}^2(P_\theta,P_{\text{data}})\) measures the discrepancy between model and data distributions  
 
 ## GF-ETLD Algorithm
-
+$$
 The method evolves an ensemble \(\{\theta^m\}_{m=1}^M\) using an **affine-invariant** preconditioner \(C\) (empirical covariance) and **statistical linearization**.  
 The key surrogate for the Jacobian in the gradient of the MMD is
 \begin{equation}\label{eqn:jacobian_surrogate}
@@ -68,7 +68,7 @@ C^{\theta x^j}_s
 C^{\theta x^j}_s
 \nabla_{x^{mj}} k(x^{mj}_s, y^n).
 \end{equation}
-
+$$
 ## Project structure
 
 ### Core implementation (`gfetld_mmd/`)
